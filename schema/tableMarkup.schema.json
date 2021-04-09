@@ -1,0 +1,22 @@
+{
+  "$id": "/TableMarkup",
+  "type": "object",
+  "properties": {
+    "rows": {
+      "type": "object",
+      "patternProperties": {
+        "\\d+": {
+          "$ref": "/RowMarkup"
+        }
+      }
+    },
+    "columns": {
+      "type": "object",
+      "patternProperties": {
+        "\\d+": {
+          "$ref": "/ColumnMarkup"
+        }
+      }
+    }
+  }
+}

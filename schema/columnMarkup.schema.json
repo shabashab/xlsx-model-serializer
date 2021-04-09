@@ -1,0 +1,15 @@
+{
+  "$id": "/ColumnMarkup",
+  "type": "object",
+  "properties": {
+    "width": {
+      "type": "number"
+    },
+    "level": {
+      "type": "number"
+    },
+    "collapsed": {
+      "type": "boolean"
+    }
+  }
+}

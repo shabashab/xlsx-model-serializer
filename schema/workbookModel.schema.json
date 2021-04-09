@@ -1,0 +1,13 @@
+{
+  "$id": "/WorkbookModel",
+  "type": "object",
+  "properties": {
+    "worksheets": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "/WorksheetModel"
+      }
+    }
+  }
+}

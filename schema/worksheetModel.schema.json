@@ -1,0 +1,20 @@
+{
+  "$id": "/WorksheetModel",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "tableMarkup": {
+      "$ref": "/TableMarkup"
+    },
+    "rows": {
+      "type": "object",
+      "patternProperties": {
+        "\\d+": {
+          "$ref": "/RowModel"
+        }
+      }
+    }
+  }
+}
