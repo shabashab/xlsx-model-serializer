@@ -18,5 +18,7 @@
         }
       }
     }
-  }
+  },
+  "required": ["rows", "columns"],
+  "additionalProperties": false
 }

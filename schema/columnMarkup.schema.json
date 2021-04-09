@@ -11,5 +11,6 @@
     "collapsed": {
       "type": "boolean"
     }
-  }
+  },
+  "additionalProperties": false
 }

@@ -9,5 +9,7 @@
         "$ref": "/WorksheetModel"
       }
     }
-  }
+  },
+  "required": ["worksheets"],
+  "additionalProperties": false
 }
