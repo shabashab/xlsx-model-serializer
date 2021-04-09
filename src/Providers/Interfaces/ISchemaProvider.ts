@@ -1,5 +1,6 @@
 import { Schema } from "jsonschema";
 
 export default interface ISchemaProvider {
-  getSchema(): Schema;
+  readonly rootSchema: Schema;
+  readonly dependencies: Schema[];
 }
