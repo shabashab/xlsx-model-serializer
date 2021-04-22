@@ -33,6 +33,9 @@ export default class TableMarkupDeserializer
       );
     });
 
+    tableMarkup.rowsCount = objectToDeserialize.rowsCount;
+    tableMarkup.columnsCount = objectToDeserialize.columnsCount;
+
     return tableMarkup;
   }
 }

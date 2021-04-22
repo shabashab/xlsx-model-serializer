@@ -20,6 +20,8 @@ export default class TableMarkupSerializer implements ITableMarkupSerializer {
     let result = {
       rows: {} as ObjectDictionary,
       columns: {} as ObjectDictionary,
+      rowsCount: 0,
+      columnsCount: 0,
     };
 
     tableMarkup.rows.forEach((key, value) => {
@@ -31,6 +33,9 @@ export default class TableMarkupSerializer implements ITableMarkupSerializer {
         value,
       );
     });
+
+    result.rowsCount = tableMarkup.rowsCount;
+    result.columnsCount = tableMarkup.columnsCount;
 
     return result;
   }

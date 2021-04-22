@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@types/node": "^14.14.37",
-    "@xlsx-model/models": "^1.0.0",
+    "@xlsx-model/models": "^1.0.1",
     "jsonschema": "^1.4.0"
   },
   "scripts": {

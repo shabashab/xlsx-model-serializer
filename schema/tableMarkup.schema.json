@@ -17,6 +17,12 @@
           "$ref": "/ColumnMarkup"
         }
       }
+    },
+    "rowsCount": {
+      "type": "number"
+    },
+    "columnsCount": {
+      "type": "number"
     }
   },
   "required": ["rows", "columns"],
