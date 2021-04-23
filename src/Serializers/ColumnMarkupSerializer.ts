@@ -1,7 +1,6 @@
-import IColumnMarkupSerializer from "./Interfaces/IColumnMarkupSerializer";
 import { ColumnMarkup } from "@xlsx-model/models";
 
-export default class ColumnMarkupSerializer implements IColumnMarkupSerializer {
+export default class ColumnMarkupSerializer {
   serialize(columnMarkup: ColumnMarkup): object {
     return {
       width: columnMarkup.width,

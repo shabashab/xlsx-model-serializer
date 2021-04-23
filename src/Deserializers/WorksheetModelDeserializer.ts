@@ -1,19 +1,14 @@
-import IWorksheetModelDeserializer from "./Interfaces/IWorksheetModelDeserializer";
-import IRowModelDeserializer from "./Interfaces/IRowModelDeserializer";
-import ITableMarkupDeserializer from "./Interfaces/ITableMarkupDeserializer";
 import { WorksheetModel } from "@xlsx-model/models";
+import RowModelDeserializer from "./RowModelDeserializer";
+import TableMarkupDeserializer from "./TableMarkupDeserializer";
 
-export default class WorksheetModelDeserializer
-  implements IWorksheetModelDeserializer {
-  private _rowDeserializer: IRowModelDeserializer;
-  private _markupDeserializer: ITableMarkupDeserializer;
+export default class WorksheetModelDeserializer {
+  private _rowDeserializer: RowModelDeserializer;
+  private _markupDeserializer: TableMarkupDeserializer;
 
-  constructor(
-    rowModelDeserializer: IRowModelDeserializer,
-    tableMarkupDeserializer: ITableMarkupDeserializer,
-  ) {
-    this._rowDeserializer = rowModelDeserializer;
-    this._markupDeserializer = tableMarkupDeserializer;
+  constructor() {
+    this._rowDeserializer = new RowModelDeserializer();
+    this._markupDeserializer = new TableMarkupDeserializer();
   }
 
   deserialize(objectToDeserialize: any): WorksheetModel {

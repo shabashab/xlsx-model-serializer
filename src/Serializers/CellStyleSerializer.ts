@@ -1,7 +1,6 @@
-import ICellStyleSerializer from "./Interfaces/ICellStyleSerializer";
 import { Border, BorderPart, CellStyle } from "@xlsx-model/models";
 
-export default class CellStyleSerializer implements ICellStyleSerializer {
+export default class CellStyleSerializer {
   serializeBorderPart(borderPart: BorderPart | undefined): object | undefined {
     if (!borderPart) return undefined;
 

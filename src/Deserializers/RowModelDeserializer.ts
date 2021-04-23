@@ -1,12 +1,11 @@
-import IRowModelDeserializer from "./Interfaces/IRowModelDeserializer";
 import { RowModel } from "@xlsx-model/models";
-import ICellModelDeserializer from "./Interfaces/ICellModelDeserializer";
+import CellModelDeserializer from "./CellModelDeserializer";
 
-export default class RowModelDeserializer implements IRowModelDeserializer {
-  private _cellDeserializer: ICellModelDeserializer;
+export default class RowModelDeserializer {
+  private _cellDeserializer: CellModelDeserializer;
 
-  constructor(cellModelDeserializer: ICellModelDeserializer) {
-    this._cellDeserializer = cellModelDeserializer;
+  constructor() {
+    this._cellDeserializer = new CellModelDeserializer();
   }
 
   deserialize(objectToDeserialize: any): RowModel {

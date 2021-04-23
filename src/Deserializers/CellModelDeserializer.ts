@@ -1,12 +1,11 @@
-import ICellModelDeserializer from "./Interfaces/ICellModelDeserializer";
 import { CellModel } from "@xlsx-model/models";
-import ICellStyleDeserializer from "./Interfaces/ICellStyleDeserializer";
+import CellStyleDeserializer from "./CellStyleDeserializer";
 
-export default class CellModelDeserializer implements ICellModelDeserializer {
-  private _styleDeserializer: ICellStyleDeserializer;
+export default class CellModelDeserializer {
+  private _styleDeserializer: CellStyleDeserializer;
 
-  constructor(cellStyleDeserializer: ICellStyleDeserializer) {
-    this._styleDeserializer = cellStyleDeserializer;
+  constructor() {
+    this._styleDeserializer = new CellStyleDeserializer();
   }
 
   deserialize(objectToDeserialize: any): CellModel {

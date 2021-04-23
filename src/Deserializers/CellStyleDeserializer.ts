@@ -1,7 +1,6 @@
-import ICellStyleDeserializer from "./Interfaces/ICellStyleDeserializer";
 import { Border, BorderPart, CellStyle } from "@xlsx-model/models";
 
-export default class CellStyleDeserializer implements ICellStyleDeserializer {
+export default class CellStyleDeserializer {
   private static deserializeBorderPart(
     borderPartObject: any,
   ): BorderPart | undefined {

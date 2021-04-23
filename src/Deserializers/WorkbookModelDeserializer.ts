@@ -1,42 +1,11 @@
-import IWorkbookModelDeserializer from "./Interfaces/IWorkbookModelDeserializer";
 import { WorkbookModel } from "@xlsx-model/models";
-import IWorksheetModelDeserializer from "./Interfaces/IWorksheetModelDeserializer";
 import WorksheetModelDeserializer from "./WorksheetModelDeserializer";
-import RowModelDeserializer from "./RowModelDeserializer";
-import TableMarkupDeserializer from "./TableMarkupDeserializer";
-import RowMarkupDeserializer from "./RowMarkupDeserializer";
-import ColumnMarkupDeserializer from "./ColumnMarkupDeserializer";
-import CellModelDeserializer from "./CellModelDeserializer";
-import CellStyleDeserializer from "./CellStyleDeserializer";
 
-export default class WorkbookModelDeserializer
-  implements IWorkbookModelDeserializer {
-  private _worksheetDeserializer: IWorksheetModelDeserializer;
+export default class WorkbookModelDeserializer {
+  private _worksheetDeserializer: WorksheetModelDeserializer;
 
-  private static initWorksheetModelDeserializer(): IWorksheetModelDeserializer {
-    let cellStyleDeserializer = new CellStyleDeserializer();
-    let cellModelDeserializer = new CellModelDeserializer(
-      cellStyleDeserializer,
-    );
-    let rowModelDeserializer = new RowModelDeserializer(cellModelDeserializer);
-
-    let rowMarkupDeserializer = new RowMarkupDeserializer();
-    let columnMarkupDeserializer = new ColumnMarkupDeserializer();
-    let tableMarkupDeserializer = new TableMarkupDeserializer(
-      rowMarkupDeserializer,
-      columnMarkupDeserializer,
-    );
-
-    return new WorksheetModelDeserializer(
-      rowModelDeserializer,
-      tableMarkupDeserializer,
-    );
-  }
-
-  constructor(worksheetModelDeserializer?: IWorksheetModelDeserializer) {
-    this._worksheetDeserializer =
-      worksheetModelDeserializer ||
-      WorkbookModelDeserializer.initWorksheetModelDeserializer();
+  constructor() {
+    this._worksheetDeserializer = new WorksheetModelDeserializer();
   }
 
   deserialize(objectToDeserialize: any): WorkbookModel {

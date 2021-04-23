@@ -1,13 +1,12 @@
-import IRowModelSerializer from "./Interfaces/IRowModelSerializer";
 import { RowModel } from "@xlsx-model/models";
-import ICellModelSerializer from "./Interfaces/ICellModelSerializer";
 import ObjectDictionary from "../Types/ObjectDictionary";
+import CellModelSerializer from "./CellModelSerializer";
 
-export default class RowModelSerializer implements IRowModelSerializer {
-  private _cellSerializer: ICellModelSerializer;
+export default class RowModelSerializer {
+  private _cellSerializer: CellModelSerializer;
 
-  constructor(cellSerializer: ICellModelSerializer) {
-    this._cellSerializer = cellSerializer;
+  constructor() {
+    this._cellSerializer = new CellModelSerializer();
   }
 
   serialize(rowModel: RowModel): object {

@@ -1,19 +1,15 @@
-import ITableMarkupSerializer from "./Interfaces/ITableMarkupSerializer";
 import { TableMarkup } from "@xlsx-model/models";
 import ObjectDictionary from "../Types/ObjectDictionary";
-import IRowMarkupSerializer from "./Interfaces/IRowMarkupSerializer";
-import IColumnMarkupSerializer from "./Interfaces/IColumnMarkupSerializer";
+import RowMarkupSerializer from "./RowMarkupSerializer";
+import ColumnMarkupSerializer from "./ColumnMarkupSerializer";
 
-export default class TableMarkupSerializer implements ITableMarkupSerializer {
-  private _rowMarkupSerializer: IRowMarkupSerializer;
-  private _columnMarkupSerializer: IColumnMarkupSerializer;
+export default class TableMarkupSerializer {
+  private _rowMarkupSerializer: RowMarkupSerializer;
+  private _columnMarkupSerializer: ColumnMarkupSerializer;
 
-  constructor(
-    rowMarkupSerializer: IRowMarkupSerializer,
-    columnMarkupSerializer: IColumnMarkupSerializer,
-  ) {
-    this._rowMarkupSerializer = rowMarkupSerializer;
-    this._columnMarkupSerializer = columnMarkupSerializer;
+  constructor() {
+    this._rowMarkupSerializer = new RowMarkupSerializer();
+    this._columnMarkupSerializer = new ColumnMarkupSerializer();
   }
 
   serialize(tableMarkup: TableMarkup): object {

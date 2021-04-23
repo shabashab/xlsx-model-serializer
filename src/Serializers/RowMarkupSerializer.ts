@@ -1,7 +1,6 @@
-import IRowMarkupSerializer from "./Interfaces/IRowMarkupSerializer";
 import { RowMarkup } from "@xlsx-model/models";
 
-export default class RowMarkupSerializer implements IRowMarkupSerializer {
+export default class RowMarkupSerializer {
   serialize(rowMarkup: RowMarkup): object {
     return {
       collapsed: rowMarkup.collapsed,

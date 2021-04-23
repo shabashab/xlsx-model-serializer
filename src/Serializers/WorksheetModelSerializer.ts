@@ -1,20 +1,15 @@
 import { WorksheetModel } from "@xlsx-model/models";
-import IWorksheetModelSerializer from "./Interfaces/IWorksheetModelSerializer";
-import ITableMarkupSerializer from "./Interfaces/ITableMarkupSerializer";
-import IRowModelSerializer from "./Interfaces/IRowModelSerializer";
 import ObjectDictionary from "../Types/ObjectDictionary";
+import TableMarkupSerializer from "./TableMarkupSerializer";
+import RowModelSerializer from "./RowModelSerializer";
 
-export default class WorksheetModelSerializer
-  implements IWorksheetModelSerializer {
-  private _markupSerializer: ITableMarkupSerializer;
-  private _rowSerializer: IRowModelSerializer;
+export default class WorksheetModelSerializer {
+  private _markupSerializer: TableMarkupSerializer;
+  private _rowSerializer: RowModelSerializer;
 
-  constructor(
-    markupSerializer: ITableMarkupSerializer,
-    rowSerializer: IRowModelSerializer,
-  ) {
-    this._markupSerializer = markupSerializer;
-    this._rowSerializer = rowSerializer;
+  constructor() {
+    this._markupSerializer = new TableMarkupSerializer();
+    this._rowSerializer = new RowModelSerializer();
   }
 
   serialize(worksheetModel: WorksheetModel): object {

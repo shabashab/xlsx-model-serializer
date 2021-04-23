@@ -1,19 +1,14 @@
-import ITableMarkupDeserializer from "./Interfaces/ITableMarkupDeserializer";
 import { TableMarkup } from "@xlsx-model/models";
-import IColumnMarkupDeserializer from "./Interfaces/IColumnMarkupDeserializer";
-import IRowMarkupDeserializer from "./Interfaces/IRowMarkupDeserializer";
+import ColumnMarkupDeserializer from "./ColumnMarkupDeserializer";
+import RowMarkupDeserializer from "./RowMarkupDeserializer";
 
-export default class TableMarkupDeserializer
-  implements ITableMarkupDeserializer {
-  private _columnMarkupDeserializer: IColumnMarkupDeserializer;
-  private _rowMarkupDeserializer: IRowMarkupDeserializer;
+export default class TableMarkupDeserializer {
+  private _columnMarkupDeserializer: ColumnMarkupDeserializer;
+  private _rowMarkupDeserializer: RowMarkupDeserializer;
 
-  constructor(
-    rowMarkupDeserializer: IRowMarkupDeserializer,
-    columnMarkupDeserializer: IColumnMarkupDeserializer,
-  ) {
-    this._rowMarkupDeserializer = rowMarkupDeserializer;
-    this._columnMarkupDeserializer = columnMarkupDeserializer;
+  constructor() {
+    this._rowMarkupDeserializer = new ColumnMarkupDeserializer();
+    this._columnMarkupDeserializer = new RowMarkupDeserializer();
   }
 
   deserialize(objectToDeserialize: any): TableMarkup {

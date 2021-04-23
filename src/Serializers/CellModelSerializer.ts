@@ -1,12 +1,11 @@
-import ICellModelSerializer from "./Interfaces/ICellModelSerializer";
 import { CellModel } from "@xlsx-model/models";
-import ICellStyleSerializer from "./Interfaces/ICellStyleSerializer";
+import CellStyleSerializer from "./CellStyleSerializer";
 
-export default class CellModelSerializer implements ICellModelSerializer {
-  private _cellStyleSerializer: ICellStyleSerializer;
+export default class CellModelSerializer {
+  private _cellStyleSerializer: CellStyleSerializer;
 
-  constructor(cellStyleSerializer: ICellStyleSerializer) {
-    this._cellStyleSerializer = cellStyleSerializer;
+  constructor() {
+    this._cellStyleSerializer = new CellStyleSerializer();
   }
 
   serialize(cellModel: CellModel): object {

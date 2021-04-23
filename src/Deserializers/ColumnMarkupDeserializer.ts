@@ -1,8 +1,6 @@
-import IColumnMarkupDeserializer from "./Interfaces/IColumnMarkupDeserializer";
 import { ColumnMarkup } from "@xlsx-model/models";
 
-export default class ColumnMarkupDeserializer
-  implements IColumnMarkupDeserializer {
+export default class ColumnMarkupDeserializer {
   deserialize(objectToDeserialize: any): ColumnMarkup {
     let columnMarkup = new ColumnMarkup();
 
